@@ -9,9 +9,9 @@ class Solution {
      */
     public int[] solution(final int N) {
         final int[] sumUpToZero = new int[N];
-        for (int i = 1; i < N; i += 2) {
-            sumUpToZero[i - 1] = i;
-            sumUpToZero[i] = -i;
+        for (int i = 1, j = i - 2; i <= N / 2; i++) {
+            sumUpToZero[++j] =  i;
+            sumUpToZero[++j] = -i;
         }
         if (N % 2 == 1) {
             sumUpToZero[N - 1] = 0;
